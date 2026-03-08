@@ -1244,3 +1244,51 @@ ul {
   color: var(--color-gold);
   font-weight: 600;
 }
+
+/* ============================================================
+   SLICE 11 — LANGUAGE TOGGLE
+============================================================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  border: 1px solid rgba(201, 166, 70, 0.4);
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color var(--transition);
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-gold);
+}
+
+.lang-opt {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color var(--transition);
+  line-height: 1;
+}
+
+.lang-opt--active {
+  color: var(--color-gold);
+}
+
+.lang-sep {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    padding: 0.25rem 0.55rem;
+  }
+}
