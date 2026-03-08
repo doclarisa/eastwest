@@ -59,18 +59,64 @@
   ============================================================ -->
   <main>
     <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="hero-inner">
-        <p class="hero-eyebrow">U.S. Market Entry Specialists</p>
-        <h1 class="hero-headline" id="hero-heading">
-          Bridging <em>Emerging Markets</em><br />to American Opportunity
-        </h1>
-        <p class="hero-sub">
-          EastWest Group International partners with companies from the Baltic States, Caspian Region, and CIS markets to navigate U.S. regulatory frameworks, build strategic relationships, and establish lasting market presence.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Begin Your Entry Strategy</a>
-          <a href="#services" class="btn-outline">Explore Our Services</a>
+      <div class="hero-grid">
+
+        <!-- Left: copy -->
+        <div class="hero-left">
+          <p class="hero-overline animate-fadein" style="--delay:0s">
+            U.S. Market Entry &nbsp;·&nbsp; Business Development &nbsp;·&nbsp; International Trade
+          </p>
+          <h1 class="hero-headline" id="hero-heading">
+            <span class="hero-line animate-fadein" style="--delay:.2s">Bridging Markets.</span>
+            <span class="hero-line animate-fadein" style="--delay:.35s">Building Partnerships.</span>
+            <span class="hero-line hero-line--gold animate-fadein" style="--delay:.5s">Driving Growth.</span>
+          </h1>
+          <p class="hero-sub animate-fadein" style="--delay:.65s">
+            Your American partner for Eastern European &amp; Caspian market entry.
+          </p>
+          <div class="hero-actions animate-fadein" style="--delay:.8s">
+            <a href="#services" class="btn-primary">Explore Our Services</a>
+            <a href="#contact" class="btn-outline">Contact Us</a>
+          </div>
         </div>
+
+        <!-- Right: decorative arcs -->
+        <div class="hero-right" aria-hidden="true">
+          <svg class="hero-arcs" viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="arcGlow" cx="50%" cy="100%" r="70%">
+                <stop offset="0%"   stop-color="#C9A646" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#1F3556" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Radial glow -->
+            <ellipse cx="250" cy="440" rx="250" ry="210" fill="url(#arcGlow)"/>
+
+            <!-- Outer arc — gold -->
+            <path class="arc arc-1"
+                  d="M 28 440 A 222 222 0 0 1 472 440"
+                  fill="none" stroke="#C9A646" stroke-width="2.2" stroke-linecap="round"/>
+
+            <!-- Middle arc — white, ghost -->
+            <path class="arc arc-2"
+                  d="M 84 440 A 166 166 0 0 1 416 440"
+                  fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.6" stroke-linecap="round"/>
+
+            <!-- Inner arc — gold faint -->
+            <path class="arc arc-3"
+                  d="M 140 440 A 110 110 0 0 1 360 440"
+                  fill="none" stroke="#C9A646" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.42"/>
+
+            <!-- Endpoint dots — outer -->
+            <circle cx="28"  cy="440" r="3.5" fill="#C9A646" opacity="0.7" class="arc-dot"/>
+            <circle cx="472" cy="440" r="3.5" fill="#C9A646" opacity="0.7" class="arc-dot"/>
+            <!-- Endpoint dots — middle -->
+            <circle cx="84"  cy="440" r="2.5" fill="rgba(255,255,255,0.35)" class="arc-dot"/>
+            <circle cx="416" cy="440" r="2.5" fill="rgba(255,255,255,0.35)" class="arc-dot"/>
+          </svg>
+        </div>
+
       </div>
     </section>
 

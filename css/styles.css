@@ -263,87 +263,183 @@ ul {
 }
 
 /* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawArc {
+  from { stroke-dashoffset: var(--arc-length); }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes dotPop {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadein {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ============================================================
    HERO SECTION
 ============================================================ */
 .hero {
   background-color: var(--color-navy);
   min-height: calc(100vh - var(--nav-height));
   display: flex;
-  align-items: center;
+  align-items: stretch;
   position: relative;
   overflow: hidden;
 }
 
+/* Subtle top-left vignette */
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background: linear-gradient(to bottom left, rgba(201, 166, 70, 0.07), transparent 60%);
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
   pointer-events: none;
 }
 
-.hero-inner {
+/* Split grid */
+.hero-grid {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+  gap: var(--space-lg);
   position: relative;
   z-index: 1;
 }
 
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-sm);
+/* ---- Left: copy ---- */
+.hero-left {
   display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  flex-direction: column;
 }
 
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background-color: var(--color-gold);
-  flex-shrink: 0;
+.hero-overline {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  opacity: 0.85;
 }
 
 .hero-headline {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 1.15;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.12;
   color: var(--color-offwhite);
-  max-width: 700px;
   margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
 }
 
-.hero-headline em {
-  font-style: italic;
+.hero-line {
+  display: block;
+}
+
+.hero-line--gold {
   color: var(--color-gold);
+  font-style: italic;
 }
 
 .hero-sub {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.75;
-  color: rgba(247, 245, 240, 0.72);
-  max-width: 540px;
+  color: rgba(247, 245, 240, 0.68);
   margin-bottom: var(--space-lg);
+  max-width: 480px;
 }
 
 .hero-actions {
   display: flex;
   gap: var(--space-sm);
   flex-wrap: wrap;
+}
+
+/* ---- Right: arcs ---- */
+.hero-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-arcs {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow: visible;
+}
+
+/* Arc 1 — outer gold — length ≈ π × 222 ≈ 697 */
+.arc-1 {
+  --arc-length: 697px;
+  stroke-dasharray: 697;
+  stroke-dashoffset: 697;
+  animation: drawArc 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+/* Arc 2 — middle ghost — length ≈ π × 166 ≈ 521 */
+.arc-2 {
+  --arc-length: 521px;
+  stroke-dasharray: 521;
+  stroke-dashoffset: 521;
+  animation: drawArc 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.65s forwards;
+}
+
+/* Arc 3 — inner gold faint — length ≈ π × 110 ≈ 346 */
+.arc-3 {
+  --arc-length: 346px;
+  stroke-dasharray: 346;
+  stroke-dashoffset: 346;
+  animation: drawArc 1.0s cubic-bezier(0.4, 0, 0.2, 1) 0.85s forwards;
+}
+
+.arc-dot {
+  opacity: 0;
+  animation: dotPop 0.35s ease 1.5s forwards;
+}
+
+/* Mobile: stack vertically, hide arcs */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-top: calc(var(--space-lg) + var(--nav-height));
+    gap: var(--space-md);
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
 }
 
 /* ============================================================
