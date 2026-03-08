@@ -664,6 +664,85 @@ ul {
 }
 
 /* ============================================================
+   SLICE 6 — WHY EASTWEST GROUP
+============================================================ */
+.whyus-section {
+  background-color: var(--color-offwhite);
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Left */
+.whyus-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.whyus-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.45;
+  color: var(--color-navy);
+  quotes: none;
+  margin-bottom: var(--space-md);
+}
+
+.whyus-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+/* Right */
+.whyus-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: 0.25rem;
+}
+
+.differentiators {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.diff-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.diff-diamond {
+  color: var(--color-gold);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+  position: relative;
+  top: -0.05em;
+}
+
+@media (max-width: 768px) {
+  .whyus-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+/* ============================================================
    SECTION UTILITIES
 ============================================================ */
 .section-offwhite {
