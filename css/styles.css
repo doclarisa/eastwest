@@ -593,6 +593,77 @@ ul {
 }
 
 /* ============================================================
+   SLICE 5 — MARKETS WE SERVE
+============================================================ */
+.markets-section {
+  background-color: var(--color-navy);
+  color: var(--color-offwhite);
+}
+
+.markets-section .section-label {
+  color: var(--color-gold);
+  opacity: 0.8;
+}
+
+.markets-title {
+  color: var(--color-offwhite);
+}
+
+.markets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg) var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.market-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1 1 200px;
+}
+
+.market-pill {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-offwhite);
+  border: 1.5px solid var(--color-gold);
+  padding: 0.6rem 1.4rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.market-pill:hover {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.market-countries {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.82rem;
+  color: rgba(247, 245, 240, 0.55);
+  line-height: 1.7;
+  padding-left: 0.1rem;
+}
+
+@media (max-width: 768px) {
+  .markets-grid {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .market-item {
+    flex: none;
+  }
+}
+
+/* ============================================================
    SECTION UTILITIES
 ============================================================ */
 .section-offwhite {
