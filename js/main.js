@@ -68,7 +68,7 @@ const translations = {
     leadership_title:  'Leadership',
     leader_photo_alt:  '[ Managing Director Photo ]',
     leader_job_title:  'Managing Director, EastWest Group International',
-    leader_bio:        '[With a background spanning engineering, international trade, and B2B sales, our Managing Director brings over a decade of experience connecting Eastern European and Caspian companies with U.S. partners. A multilingual professional fluent in the business cultures of both regions, they founded EastWest Group International to fill a critical gap in American market access for innovation-driven firms. Their track record includes successful market entries across technology, energy, and industrial sectors.]',
+    leader_bio:        'With a background spanning engineering, international trade, and B2B sales, our Managing Director brings over a decade of experience connecting Eastern European and Caspian companies with U.S. partners. A multilingual professional fluent in the business cultures of both regions, they founded EastWest Group International to fill a critical gap in American market access for innovation-driven firms. Their track record includes successful market entries across technology, energy, and industrial sectors.',
     leader_linkedin:   'LinkedIn Profile',
 
     // Sectors
