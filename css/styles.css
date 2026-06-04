@@ -1286,3 +1286,36 @@ ul {
     padding: 0.25rem 0.55rem;
   }
 }
+
+/* ============================================================
+   SUSTAINABILITY SECTION
+============================================================ */
+.sustainability-section {
+  background-color: var(--color-offwhite);
+  padding: var(--space-lg) 0;
+}
+
+.sustainability-body {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sustainability-body p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.sustainability-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Leadership card wrap — stacked layout for multiple leaders */
+.leadership-card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
