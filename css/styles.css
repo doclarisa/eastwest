@@ -755,11 +755,13 @@ ul {
 
 .leadership-card-wrap {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
 }
 
 .leader-card {
-  max-width: 520px;
+  max-width: 680px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1313,9 +1315,3 @@ ul {
   text-align: center;
 }
 
-/* Leadership card wrap — stacked layout for multiple leaders */
-.leadership-card-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
